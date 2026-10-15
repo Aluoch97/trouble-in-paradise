@@ -1,0 +1,22 @@
+# Godot 4
+.godot/
+*.translation
+export_presets.cfg.bak
+/builds/
+/game/builds/
+
+# Exported game builds (share these through Releases, not commits)
+*.exe
+*.pck
+*.x86_64
+*.apk
+*.aab
+*.dmg
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+.vscode/
+.idea/
