@@ -1,0 +1,78 @@
+{
+	"_about": "Dialogue for mission 2, Welcome to Paradise. Lines come from the 2018 script. Edit freely: 'who' must match a speaker in hud.gd SPEAKER_COLORS. Effects: trust {name: amount}, drama amount, set {flag: value}.",
+
+	"intro_subtitles": [
+		{"who": "Nick", "text": "Janae said she's at the pool. Let me go get her."}
+	],
+
+	"arrive_pool_subtitles": [
+		{"who": "Nick", "text": "There she is. And there's Samson."}
+	],
+
+	"pool_scene": [
+		{"who": "Janae", "text": "Oh hey babe, you could've just told me to come to the car."},
+		{"who": "Janae", "text": "You know Samson, right?"},
+		{"who": "Nick", "text": "Janae…"},
+		{"who": "Janae", "text": "He's a psych major. This is his friend Justin and he's a…"},
+		{"choice": [
+			{
+				"label": "\"Janae. Can we speak in private?\"",
+				"note": "Keep it light. Janae trust up.",
+				"effects": {"trust": {"janae": 6}, "set": {"pool_choice": "private"}},
+				"then": [
+					{"who": "Janae", "text": "Uh… sure?"}
+				]
+			},
+			{
+				"label": "Call it out in front of them",
+				"note": "Say it here. Drama up, trust down.",
+				"effects": {"trust": {"janae": -12}, "drama": 2, "set": {"pool_choice": "scene"}},
+				"then": [
+					{"who": "Nick", "text": "So this is what you do while I'm on my way to get you?"},
+					{"who": "Samson", "text": "Bro. Relax."},
+					{"who": "Janae", "text": "Are you serious right now? In front of everybody? Let's go."}
+				]
+			}
+		]}
+	],
+
+	"car_argument": {
+		"private": [
+			{"who": "Janae", "text": "What is it?"},
+			{"who": "Nick", "text": "First off, you know me and Samson don't get along."},
+			{"who": "Nick", "text": "Secondly, you know how it looks if my girlfriend is flirting with him and his friends."},
+			{"who": "Janae", "text": "Well excuse me, warden. I didn't know I was under your possess—"},
+			{"who": "Nick", "text": "It's not even like that though! If I was flirting with girls you don't get along with, you'd give me hell."},
+			{"who": "Nick", "text": "Everything I've said has been light. I could've just went off on you in front of them."},
+			{"who": "Janae", "text": "Nick, you're overreacting. It was a simple conversation."},
+			{"who": "Janae", "text": "If you don't want me to talk to them, then I won't talk to them. Conversation over."},
+			{"who": "Nick", "text": "Wow, don't make me seem like the…"},
+			{"who": "Janae", "text": "Nick, just drive already."},
+			{"who": "Nick", "text": "Whatever."}
+		],
+		"scene": [
+			{"who": "Janae", "text": "You really did that. In front of everybody."},
+			{"who": "Nick", "text": "You were the one flirting with Samson."},
+			{"who": "Janae", "text": "It was a conversation, Nick. Now they all think you're crazy."},
+			{"who": "Nick", "text": "I don't care what they think."},
+			{"who": "Janae", "text": "Clearly. Just drive."},
+			{"who": "Nick", "text": "Whatever."}
+		]
+	},
+
+	"crash_complaints": [
+		{"who": "Janae", "text": "Nick!"},
+		{"who": "Janae", "text": "Are you trying to get us killed?"},
+		{"who": "Janae", "text": "Watch the road!"}
+	],
+
+	"home_scene": [
+		{"who": "Janae", "text": "Are you coming inside?"},
+		{"who": "Nick", "text": "I don't know yet."}
+	],
+
+	"passed_text": {
+		"private": "You kept it private. Janae's still with you, for now.",
+		"scene": "You made a scene at the pool. Samson's going to tell everybody."
+	}
+}

@@ -1,0 +1,32 @@
+name: Playthrough
+
+# Plays mission 2 start to finish in headless Godot on every push and pull request.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  playthrough:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GODOT_VERSION: 4.4.1-stable
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Godot
+        run: |
+          curl -sSL -o godot.zip "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}/Godot_v${GODOT_VERSION}_linux.x86_64.zip"
+          unzip -q godot.zip
+          mv "Godot_v${GODOT_VERSION}_linux.x86_64" godot
+          chmod +x godot
+
+      - name: Import project
+        run: ./godot --headless --path game --import || true
+
+      - name: Check every script compiles
+        run: ./godot --headless --path game res://tests/check_scripts.tscn
+
+      - name: Play mission 2
+        run: ./godot --headless --path game res://tests/playthrough.tscn
